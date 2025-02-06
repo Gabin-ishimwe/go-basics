@@ -38,5 +38,6 @@ Paragraph
 	fmt.Println(var3, var4)
 
 	const change bool = true
+	fmt.Println(change)
 
 }
