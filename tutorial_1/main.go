@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
 	// declare variable
@@ -40,4 +43,34 @@ Paragraph
 	const change bool = true
 	fmt.Println(change)
 
+	var first = "gabin"
+
+	sample(first)
+
+	// division
+	var res, res2, err = division(11, 2)
+
+	fmt.Println(res, res2)
+	fmt.Printf("remainder %v", res2)
+
+	if err == nil {
+		fmt.Printf(err.Error())
+	} else if err != nil {
+		fmt.Println("It is not nil")
+	} else {
+		fmt.Println("It is none of the conditions")
+	}
+}
+
+func sample(test string) {
+	fmt.Println(test)
+}
+
+func division(first int, second int) (int, int, error) {
+	var err error
+	if first == 0 {
+		err = errors.New("Cannot Divide by Zero")
+		return 0, 0, nil
+	}
+	return (first / second), (first % second), err
 }
